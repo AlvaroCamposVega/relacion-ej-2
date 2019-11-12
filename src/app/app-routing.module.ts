@@ -7,6 +7,7 @@ const routes: Routes = [
   { path: 'ejercicio05', loadChildren: './pages/ejercicio05/ejercicio05.module#Ejercicio05PageModule' },
   { path: 'edit', loadChildren: './pages/edit/edit.module#EditPageModule' },
   { path: 'edit/:id', loadChildren: './pages/edit/edit.module#EditPageModule' },
+  { path: 'ejercicio06-to08', loadChildren: './pages/ejercicio06-to08/ejercicio06-to08.module#Ejercicio06To08PageModule' },
 ];
 
 @NgModule({
