@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Carrito Compra</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row class="border head" align-items-center>
+      <ion-col size="3">
+        <h6 class="center">Item</h6>
+      </ion-col>
+      <ion-col size="3">
+        <h6 class="center">Price</h6>
+      </ion-col>
+      <ion-col size="3">
+        <h6 class="center">Quantity</h6>
+      </ion-col>
+      <ion-col size="3">
+        <h6 class="center">Subtotal</h6>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngFor="let element of cart" class="border color" align-items-center>
+      <ion-col size="3">
+        <h6>{{ element.item }}</h6>
+      </ion-col>
+      <ion-col size="3">
+        <h6 class="center">{{ element.price | currency }}</h6>
+      </ion-col>
+      <ion-col size="3">
+        <h6 class="center">{{ element.quantity }}</h6>
+      </ion-col>
+      <ion-col size="3">
+        <h6 class="center">{{ element.price * element.quantity | currency }}</h6>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="border end" align-items-center>
+      <ion-col size="8">
+        <h6>Total:</h6>
+      </ion-col>
+      <ion-col size="4">
+        <h6 class="right">{{ total | currency }}</h6>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row class="border head">
+      <ion-col size="3">
+        <ion-input placeholder="Item" [(ngModel)]="item"></ion-input>
+      </ion-col>
+      <ion-col size="3">
+        <ion-input
+          type="number"
+          placeholder="Price"
+          [(ngModel)]="price">
+        </ion-input>
+      </ion-col>
+      <ion-col size="3">
+        <ion-input
+          type="number"
+          placeholder="Quantity"
+          [(ngModel)]="quantity">
+        </ion-input>
+      </ion-col>
+      <ion-col size="3">
+        <ion-button
+          size="small"
+          color="primary"
+          expand="full"
+          (click)="addItem(item, price, quantity)">
+          Add Item
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
