@@ -15,7 +15,7 @@ export class Ejercicio03Page implements OnInit
 
   ngOnInit()
   {
-    this.cartService.getJSON("cart.json").subscribe(
+    this.cartService.getJSON().subscribe(
       data => {
         this.cart = data;
 

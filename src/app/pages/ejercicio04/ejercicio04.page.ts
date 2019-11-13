@@ -24,7 +24,7 @@ export class Ejercicio04Page implements OnInit
 
   getItems()
   {
-    this.cartService.getJSON("cart.json").subscribe(
+    this.cartService.getJSON().subscribe(
       data => {
         this.cart = data;
 
